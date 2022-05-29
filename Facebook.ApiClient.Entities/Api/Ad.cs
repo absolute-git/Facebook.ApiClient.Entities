@@ -225,7 +225,7 @@ namespace Facebook.ApiClient.Entities.Api
         [JsonProperty(PropertyName = "tracking_specs", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
             DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
             ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public string TrackingSpec { get; set; }
+        public List<ConversionActionQuery> TrackingSpec { get; set; }
         //public List<ConversionActionQuery> TrackingSpec { get; set; }
 
         /// <summary>
