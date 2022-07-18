@@ -14,6 +14,10 @@ namespace Facebook.ApiClient.Entities.Api
     /// </summary>
     public class Campaign : BaseEntity
     {
+        //v14.0 missing fields: budget_rebalance_flag (U), budget_remaining, can_create_brand_lift_study, can_use_spend_cap, daily_budget (C, U), is_skadnetwork_attribution (C, U), issues_info#
+        /// last_budget_toggling_time, lifetime_budget, pacing_type, promoted_object (C, U), smart_promotion_type (U), source_campaign, source_campaign_id (C), topline_id (C), special_ad_category_country (C, U)
+        /// execution_options (C, U), campaign_optimization_type (C, U), is_using_l3_schedule (C, U), iterative_split_test_configs (C, U), lifetime_budget (C, U), upstream_events (C, U)
+        /// adset_bid_amounts (U), adset_budgets (U)
         /// <summary>
         /// Campaign's ID
         /// </summary>
@@ -29,11 +33,32 @@ namespace Facebook.ApiClient.Entities.Api
         public long? AccountId { get; set; }
 
         /// <summary>
-        /// Ad Labels associated with this campaign
+        /// Ad Labels associated with this campaign (C, U)
         /// </summary>
         [DeserializeAs(Name = "adlabels")]
         [JsonProperty(PropertyName = "adlabels", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public List<AdLabel> AdLabels { get; set; }
+
+        /// <summary>
+        /// Bid Strategy (C, U)
+        /// </summary>
+        [DeserializeAs(Name = "bid_strategy")]
+        [JsonProperty(PropertyName = "bid_strategy", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public BidStrategy? BidStrategy { get; set; }
+
+        /// <summary>
+        /// Boosted Object Id
+        /// </summary>
+        [DeserializeAs(Name = "boosted_object_id")]
+        [JsonProperty(PropertyName = "boosted_object_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public int? BoostedObjectId { get; set; }
+
+        /// <summary>
+        /// Buying type (C)
+        /// </summary>
+        [DeserializeAs(Name = "brand_lift_studies")]
+        [JsonProperty(PropertyName = "brand_lift_studies", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public List<AdStudy> BrandLiftStudies { get; set; }
 
         /// <summary>
         /// Buying type
@@ -71,14 +96,14 @@ namespace Facebook.ApiClient.Entities.Api
         public CampaignEffectiveStatus? EffectiveStatus { get; set; }
 
         /// <summary>
-        /// Campaign's name
+        /// Campaign's name (C, U)
         /// </summary>
         [DeserializeAs(Name = "name")]
         [JsonProperty(PropertyName = "name", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Campaign's objective
+        /// Campaign's objective (C, U)
         /// </summary>
         [DeserializeAs(Name = "objective")]
         [JsonProperty(PropertyName = "objective", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
@@ -92,28 +117,42 @@ namespace Facebook.ApiClient.Entities.Api
         public List<AdRecommendation> Recommendations { get; set; }
 
         /// <summary>
-        /// A spend cap for the campaign
+        /// special ad categories (C, U)
+        /// </summary>
+        [DeserializeAs(Name = "special_ad_categories")]
+        [JsonProperty(PropertyName = "special_ad_categories", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Include, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public List<SpecialAdCategory> SpecialAdCategories { get; set; }
+
+        /// <summary>
+        /// The campaign's Special Ad Category. One of HOUSING, EMPLOYMENT, CREDIT, or NONE. (U)
+        /// </summary>
+        [DeserializeAs(Name = "special_ad_category")]
+        [JsonProperty(PropertyName = "special_ad_category", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public SpecialAdCategory SpecialAdCategory { get; set; }
+
+        /// <summary>
+        /// A spend cap for the campaign (C, U)
         /// </summary>
         [DeserializeAs(Name = "spend_cap")]
         [JsonProperty(PropertyName = "spend_cap", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public int? SpendCap { get; set; }
 
         /// <summary>
-        /// Start Time
+        /// Start Time (C, U)
         /// </summary>
         [DeserializeAs(Name = "start_time")]
         [JsonProperty(PropertyName = "start_time", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// Campaign status
+        /// Campaign status (C, U)
         /// </summary>
         [DeserializeAs(Name = "status")]
         [JsonProperty(PropertyName = "status", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public CampaignStatus? Status { get; set; }
 
         /// <summary>
-        /// Stop Time
+        /// Stop Time (C, U)
         /// </summary>
         [DeserializeAs(Name = "stop_time")]
         [JsonProperty(PropertyName = "stop_time", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]

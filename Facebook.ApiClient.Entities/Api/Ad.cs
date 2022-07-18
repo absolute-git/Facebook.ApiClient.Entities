@@ -134,8 +134,7 @@ namespace Facebook.ApiClient.Entities.Api
         [JsonProperty(PropertyName = "conversion_specs", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
             DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
             ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        //public List<ConversionActionQuery> ConversionSpec { get; set; }
-        public string ConversionSpec { get; set; }
+        public List<ConversionActionQuery> ConversionSpec { get; set; }
 
         /// <summary>
         /// Created time
@@ -226,7 +225,6 @@ namespace Facebook.ApiClient.Entities.Api
             DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
             ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public List<ConversionActionQuery> TrackingSpec { get; set; }
-        //public List<ConversionActionQuery> TrackingSpec { get; set; }
 
         /// <summary>
         /// Updated time

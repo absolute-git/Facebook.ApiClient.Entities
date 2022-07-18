@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using RestSharp.Deserializers;
+using System.Collections.Generic;
 
 namespace Facebook.ApiClient.Entities.Api
 {
@@ -23,6 +24,13 @@ namespace Facebook.ApiClient.Entities.Api
         [DeserializeAs(Name = "caption")]
         [JsonProperty(PropertyName = "caption", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string Caption { get; set; }
+
+        /// <summary>
+        /// The automated generated caption/SRT caption ids of the video.
+        /// </summary>
+        [DeserializeAs(Name = "caption_ids")]
+        [JsonProperty(PropertyName = "caption_ids", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public List<string> CaptionIds { get; set; }
 
         /// <summary>
         /// Overwrites the description of each attachment on Facebook, not used on Instagram.

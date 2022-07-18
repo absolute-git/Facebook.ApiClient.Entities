@@ -21,6 +21,14 @@ namespace Facebook.ApiClient.Entities.Api
         public long? Id { get; set; }
 
         /// <summary>
+        /// The ID of this creative (because the api wants a POST request with this property and GEt with above!!!!!
+        /// wil need to ignore it on the fieldselector as it cant be returned
+        /// </summary>
+        [DeserializeAs(Name = "creative_id")]
+        [JsonProperty(PropertyName = "creative_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public long? CreativeId { get; set; }
+
+        /// <summary>
         /// Account ID
         /// </summary>
         [DeserializeAs(Name = "account_id")]
@@ -55,12 +63,19 @@ namespace Facebook.ApiClient.Entities.Api
         [JsonProperty(PropertyName = "asset_feed_spec", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string AssetFeedSpec { get; set; }
 
+        //authorization_category
+
+
         /// <summary>
         /// The body of the ad
         /// </summary>
         [DeserializeAs(Name = "body")]
         [JsonProperty(PropertyName = "body", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string Body { get; set; }
+
+        //branded_content_sponsor_page_id
+
+        //bundle_folder_id
 
         /// <summary>
         /// The call to action button text and header text of legacy ads.
@@ -69,6 +84,35 @@ namespace Facebook.ApiClient.Entities.Api
         [JsonProperty(PropertyName = "call_to_action_type", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public CreativeCallToActionType? CallToActionType { get; set; }
 
+        //categorization_criteria
+
+        //category_media_source
+
+        //collaborative_ads_lsb_image_bank_id
+
+        //destination_set_id
+
+        //dynamic_ad_voice
+
+        //effective_authorization_category
+
+        
+
+        /// <summary>
+        /// The ID of an Instagram post to use in an ad
+        /// </summary>
+        [DeserializeAs(Name = "effective_instagram_media_id")]
+        [JsonProperty(PropertyName = "effective_instagram_media_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public string EffectiveInstagramMediaId { get; set; }
+
+        /// <summary>
+        /// Used for Instagram Ads. The ID of an Instagram post to display as an Instagram ad.
+        /// https://developers.facebook.com/micro_site/url/?click_from_context_menu=true&country=GB&destination=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fmarketing-api%2Fguides%2Finstagramads&event_type=click&last_nav_impression_id=0AMCBzVEfvecpLgrn&max_percent_page_viewed=55&max_viewport_height_px=969&max_viewport_width_px=1920&orig_http_referrer=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fmarketing-api%2Freference%2Fad-creative&orig_request_uri=https%3A%2F%2Fdevelopers.facebook.com%2Fajax%2Fdocs%2Fnav%2F%3Fpath1%3Dmarketing-api%26path2%3Dreference%26path3%3Dad-creative&region=emea&scrolled=true&session_id=1hjlExylgNJ4dQW4S&site=developers
+        /// </summary>
+        [DeserializeAs(Name = "effective_instagram_story_id")]
+        [JsonProperty(PropertyName = "effective_instagram_story_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public string EffectiveInstagramStoryId { get; set; }
+
         /// <summary>
         /// The ID of a page post to use in an ad, regardless of whether it's an organic or unpublished page post.
         /// </summary>
@@ -76,12 +120,9 @@ namespace Facebook.ApiClient.Entities.Api
         [JsonProperty(PropertyName = "effective_object_story_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string EffectiveObjectStoryId { get; set; }
 
-        /// <summary>
-        /// The ID of an Instagram post to use in an ad.
-        /// </summary>
-        [DeserializeAs(Name = "effective_instagram_story_id")]
-        [JsonProperty(PropertyName = "effective_instagram_story_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public string EffectiveInstagramStoryId { get; set; }
+        //enable_direct_install
+
+        //enable_launch_instant_app
 
         /// <summary>
         /// A JSON object defining crop dimensions for the image specified.
@@ -126,6 +167,17 @@ namespace Facebook.ApiClient.Entities.Api
         public long? InstagramStoryId { get; set; }
 
         /// <summary>
+        /// Instagram actor ID
+        /// </summary>
+        [DeserializeAs(Name = "instagram_user_id")]
+        [JsonProperty(PropertyName = "instagram_user_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public long? InstagramUserId { get; set; }
+
+        //interactive_components_spec
+
+        //link_destination_display_url
+
+        /// <summary>
         /// The Open Graph (OG) ID for the link in this creative if the landing page has OG tags
         /// </summary>
         [DeserializeAs(Name = "link_og_id")]
@@ -138,6 +190,8 @@ namespace Facebook.ApiClient.Entities.Api
         [DeserializeAs(Name = "link_url")]
         [JsonProperty(PropertyName = "link_url", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string LinkUrl { get; set; }
+
+        //messenger_sponsored_message
 
         /// <summary>
         /// The name of the creative in the creative library. Ad Creative names should be unique.
@@ -152,6 +206,8 @@ namespace Facebook.ApiClient.Entities.Api
         [DeserializeAs(Name = "object_id")]
         [JsonProperty(PropertyName = "object_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public long? ObjectId { get; set; }
+
+        //object_store_url
 
         /// <summary>
         /// <para>The ID of a page post to use in an ad. This ID can be retrieved by using the graph API to query the posts of the page. If an image is used in the post, it will be downloaded and available in your account's image library. </para>
@@ -183,6 +239,13 @@ namespace Facebook.ApiClient.Entities.Api
         public string ObjectUrl { get; set; }
 
         /// <summary>
+        /// The ID of the page set for this creative. See theLocal Awareness guide
+        /// </summary>
+        [DeserializeAs(Name = "place_page_set_id")]
+        [JsonProperty(PropertyName = "place_page_set_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public string PlacePageSetId { get; set; }
+
+        /// <summary>
         /// Use this field to customize the media for different Facebook placements. Currently you can use this field for customizing images only. The media specified here replaces the original media defined in the ad creative when the ad displays on those placements. For example, if you define a media here for the instagram key, Facebook uses that media instead of the media defined in the ad creative when showing the ad on Instagram.
         /// </summary>
         [DeserializeAs(Name = "platform_customizations")]
@@ -190,11 +253,29 @@ namespace Facebook.ApiClient.Entities.Api
         public AdCreativePlatformCustomization PlatformCustomizations { get; set; }
 
         /// <summary>
+        /// The ID of the playable asset in this creative
+        /// </summary>
+        [DeserializeAs(Name = "playable_asset_id")]
+        [JsonProperty(PropertyName = "playable_asset_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public string PlayableAssetId { get; set; }
+
+
+        //portrait_customizations
+
+
+
+        /// <summary>
         /// The ID of the product set for this creative. See dynamic product ads for more detail
         /// </summary>
         [DeserializeAs(Name = "product_set_id")]
         [JsonProperty(PropertyName = "product_set_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public long? ProductSetId { get; set; }
+
+        //recommender_settings
+
+        //referral_id
+
+        //source_instagram_media_id
 
         /// <summary>
         /// The status of this creative.
@@ -218,6 +299,13 @@ namespace Facebook.ApiClient.Entities.Api
         public AdCreativeTemplateURLSpec TemplateUrlSpec { get; set; }
 
         /// <summary>
+        /// thumbnail_id
+        /// </summary>
+        [DeserializeAs(Name = "thumbnail_id")]
+        [JsonProperty(PropertyName = "thumbnail_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public string ThumbnailId { get; set; }
+
+        /// <summary>
         /// The URL to a thumbnail for this creative. You can optionally request dimensions of this thumbnail by providing the thumbnail_width and thumbnail_height parameters
         /// </summary>
         [DeserializeAs(Name = "thumbnail_url")]
@@ -238,6 +326,19 @@ namespace Facebook.ApiClient.Entities.Api
         [JsonProperty(PropertyName = "url_tags", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string UrlTags { get; set; }
 
+        /// <summary>
+        /// Used for App Ads. If true, we display the Facebook page associated with the app ads.
+        /// </summary>
+        [DeserializeAs(Name = "use_page_actor_override")]
+        [JsonProperty(PropertyName = "use_page_actor_override", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public bool? UsePageActorOverride { get; set; }
+
+        /// <summary>
+        /// Facebook object ID for video in this ad creative.
+        /// </summary>
+        [DeserializeAs(Name = "video_id")]
+        [JsonProperty(PropertyName = "video_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public string VideoId { get; set; }
 
         /// <summary>
         /// Get api field selectors for <see cref="Creative"/>
@@ -247,7 +348,7 @@ namespace Facebook.ApiClient.Entities.Api
         {
             var prop = typeof(Creative).GetProperties()
                 .Select(e => e.GetCustomAttributes(typeof(DeserializeAsAttribute), true)).Where(e => e.Length > 0)
-                .Select(e => e.First() as DeserializeAsAttribute).Where(e => e != null).Select(e => e.Name);
+                .Select(e => e.First() as DeserializeAsAttribute).Where(e => e != null && e.Name != "creative_id").Select(e => e.Name);     //bit hacky, but so is a different in properties between Get and POST
 
             return prop.ToList();
         }

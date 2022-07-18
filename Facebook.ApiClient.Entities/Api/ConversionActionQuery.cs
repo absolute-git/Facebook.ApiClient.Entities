@@ -168,9 +168,9 @@ namespace Facebook.ApiClient.Entities.Api
         /// <summary>
         /// Product set id
         /// </summary>
-        [DeserializeAs(Name = "product_set_id")]
-        [JsonProperty(PropertyName = "product_set_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public List<string> ProductSetId { get; set; }
+        //[DeserializeAs(Name = "product_set_id")]
+        //[JsonProperty(PropertyName = "product_set_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        //public List<string> ProductSetId { get; set; }
 
         /// <summary>
         /// Question

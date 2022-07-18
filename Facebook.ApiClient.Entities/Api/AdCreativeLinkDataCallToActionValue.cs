@@ -59,12 +59,12 @@ namespace Facebook.ApiClient.Entities.Api
         [JsonProperty(PropertyName = "link_caption", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string LinkCaption { get; set; }
 
-        /// <summary>
-        /// Description of the link shown in the attachment.
-        /// </summary>
-        [DeserializeAs(Name = "link_description")]
-        [JsonProperty(PropertyName = "link_description", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public string LinkDescription { get; set; }
+        ///// <summary>
+        ///// Description of the link shown in the attachment.
+        ///// </summary>
+        //[DeserializeAs(Name = "link_description")]
+        //[JsonProperty(PropertyName = "link_description", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        //public string LinkDescription { get; set; }
 
         /// <summary>
         /// Link format of video.
@@ -73,12 +73,12 @@ namespace Facebook.ApiClient.Entities.Api
         [JsonProperty(PropertyName = "link_format", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string LinkFormat { get; set; }
 
-        /// <summary>
-        /// Title of the link shown in the attachment.
-        /// </summary>
-        [DeserializeAs(Name = "link_title")]
-        [JsonProperty(PropertyName = "link_title", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public string LinkTitle { get; set; }
+        ///// <summary>
+        ///// Title of the link shown in the attachment.
+        ///// </summary>
+        //[DeserializeAs(Name = "link_title")]
+        //[JsonProperty(PropertyName = "link_title", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        //public string LinkTitle { get; set; }
 
         /// <summary>
         /// ID of the Facebook page which the CTA button links to

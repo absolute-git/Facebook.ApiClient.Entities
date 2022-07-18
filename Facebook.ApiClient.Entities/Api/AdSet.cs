@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Facebook.ApiClient.Entities.Enumerations;
@@ -62,6 +63,13 @@ namespace Facebook.ApiClient.Entities.Api
         [DeserializeAs(Name = "bid_info")]
         [JsonProperty(PropertyName = "bid_info", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public Dictionary<string, int> BidInfo { get; set; }
+
+        /// <summary>
+        /// Bid Strategy (C, U)
+        /// </summary>
+        [DeserializeAs(Name = "bid_strategy")]
+        [JsonProperty(PropertyName = "bid_strategy", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public BidStrategy? BidStrategy { get; set; }
 
         /// <summary>
         /// The billing event that this adset is using
@@ -136,15 +144,13 @@ namespace Facebook.ApiClient.Entities.Api
         /// <summary>
         /// The number of times this ad will show per day.
         /// </summary>
-        [DeserializeAs(Name = "frequency_cap")]
-        [JsonProperty(PropertyName = "frequency_cap", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        [Obsolete]
         public int? FrequencyCap { get; set; }
 
         /// <summary>
         /// The number of hours that will pass before resetting the frequency capping.
         /// </summary>
-        [DeserializeAs(Name = "frequency_cap_reset_period")]
-        [JsonProperty(PropertyName = "frequency_cap_reset_period", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        [Obsolete]
         public int? FrequencyCapResetPeriod { get; set; }
 
         /// <summary>
@@ -164,16 +170,16 @@ namespace Facebook.ApiClient.Entities.Api
         /// <summary>
         /// Whether the advertiser express the intent to bid automatically. This field is not available if <see cref="BidInfo"/> or <see cref="BidAmount"/> is returned.
         /// </summary>
-        [DeserializeAs(Name = "is_autobid")]
-        [JsonProperty(PropertyName = "is_autobid", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public bool? IsAutoBid { get; set; }
+        //[DeserializeAs(Name = "is_autobid")]
+        //[JsonProperty(PropertyName = "is_autobid", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+       // public bool? IsAutoBid { get; set; }
 
         /// <summary>
         /// Whether the advertiser express the intent to use average price pacing,
         /// </summary>
-        [DeserializeAs(Name = "is_average_price_pacing")]
-        [JsonProperty(PropertyName = "is_average_price_pacing", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public bool? IsAveragePricePacing { get; set; }
+        //[DeserializeAs(Name = "is_average_price_pacing")]
+        //[JsonProperty(PropertyName = "is_average_price_pacing", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        //public bool? IsAveragePricePacing { get; set; }
 
         /// <summary>
         /// The lifetime budget of the set defined in your <see cref="AdAccount.Currency"/>.
@@ -185,8 +191,7 @@ namespace Facebook.ApiClient.Entities.Api
         /// <summary>
         /// Lifetime frequency cap
         /// </summary>
-        [DeserializeAs(Name = "lifetime_frequency_cap")]
-        [JsonProperty(PropertyName = "lifetime_frequency_cap", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        [Obsolete]
         public int? LifetimeFrequencyCap { get; set; }
 
         /// <summary>
@@ -209,6 +214,13 @@ namespace Facebook.ApiClient.Entities.Api
         [DeserializeAs(Name = "optimization_goal")]
         [JsonProperty(PropertyName = "optimization_goal", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public OptimizationGoal? OptimizationGoal { get; set; }
+
+        /// <summary>
+        /// Optimization sub event for a specific optimization goal. For example sound-on event for Video-View-2s optimization goal.
+        /// </summary>
+        [DeserializeAs(Name = "optimization_sub_event")]
+        [JsonProperty(PropertyName = "optimization_sub_event", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public OptimizationSubEvent? OptimizationSubEvent { get; set; }
 
         /// <summary>
         /// Defines the pacing type, standard or using ad scheduling
@@ -249,8 +261,7 @@ namespace Facebook.ApiClient.Entities.Api
         /// <summary>
         /// Whether this ad set is using RTB or not
         /// </summary>
-        [DeserializeAs(Name = "rtb_flag")]
-        [JsonProperty(PropertyName = "rtb_flag", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        [Obsolete]
         public bool? RtbFlag { get; set; }
 
         /// <summary>
@@ -273,7 +284,7 @@ namespace Facebook.ApiClient.Entities.Api
         /// </summary>
         [DeserializeAs(Name = "targeting")]
         [JsonProperty(PropertyName = "targeting", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public string Targeting { get; set; }
+        public Targeting Targeting { get; set; }
 
         /// <summary>
         /// Specify ad creative that displays at custom date ranges in a campaign as an array. A list of Adgroup IDs.

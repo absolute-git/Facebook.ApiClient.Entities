@@ -9,6 +9,7 @@ namespace Facebook.ApiClient.Entities.Api
     /// </summary>
     public class BaseEntity
     {
+        private FacebookRequestError _error;
         /// <summary>
         /// Collection of unparsed json fields from API response
         /// </summary>
@@ -22,6 +23,19 @@ namespace Facebook.ApiClient.Entities.Api
         /// </summary>
         internal BaseEntity()
         {
+        }
+
+        /// <summary>
+        /// An error response
+        /// </summary>
+        public FacebookRequestError Error
+        {
+            get { return _error; }
+            set
+            {
+                _error = value;
+                //throw new FacebookResponseException(value.Message, value.ExceptionType, value.Code, value.SubCode, value.FbTraceId);
+            }
         }
 
         /// <summary>
