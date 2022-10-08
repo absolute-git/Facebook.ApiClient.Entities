@@ -98,6 +98,46 @@
         /// <summary>
         /// APP_INSTALLS
         /// </summary>
-        APP_INSTALLS
+        APP_INSTALLS,
+
+        /// <summary>
+        /// MESSAGES
+        /// </summary>
+        MESSAGES,
+
+        //The following are newer objectives that will eventually replace the original objectives:
+        //APP_INSTALLS, BRAND_AWARENESS, CONVERSIONS, EVENT_RESPONSES, LEAD_GENERATION,
+        //LINK_CLICKS, LOCAL_AWARENESS, MESSAGES, OFFER_CLAIMS, PAGE_LIKES,
+        //POST_ENGAGEMENT, PRODUCT_CATALOG_SALES, REACH, STORE_VISITS, VIDEO_VIEWS.
+
+        /// <summary>
+        /// OUTCOME_APP_PROMOTION
+        /// </summary>
+        OUTCOME_APP_PROMOTION,
+
+        /// <summary>
+        /// OUTCOME_AWARENESS
+        /// </summary>
+        OUTCOME_AWARENESS,
+
+        /// <summary>
+        /// OUTCOME_ENGAGEMENT
+        /// </summary>
+        OUTCOME_ENGAGEMENT,
+
+        /// <summary>
+        /// OUTCOME_LEADS
+        /// </summary>
+        OUTCOME_LEADS,
+
+        /// <summary>
+        /// OUTCOME_SALES
+        /// </summary>
+        OUTCOME_SALES,
+
+        /// <summary>
+        /// OUTCOME_TRAFFIC
+        /// </summary>
+        OUTCOME_TRAFFIC
     }
 }
