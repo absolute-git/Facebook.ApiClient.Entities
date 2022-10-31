@@ -55,7 +55,7 @@ namespace Facebook.ApiClient.Entities.Api
         /// </summary>
         [DeserializeAs(Name = "bid_amount")]
         [JsonProperty(PropertyName = "bid_amount", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public decimal? BidAmount { get; set; }
+        public int? BidAmount { get; set; }
 
         /// <summary>
         /// Map of bid objective to bid value. This field is not available if is_autobid is true.
