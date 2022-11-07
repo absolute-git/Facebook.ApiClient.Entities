@@ -49,6 +49,13 @@ namespace Facebook.ApiClient.Entities.Api
         public string CountryName { get; set; }
 
         /// <summary>
+        /// Country
+        /// </summary>
+        [DeserializeAs(Name = "country")]
+        [JsonProperty(PropertyName = "country", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public string Country { get; set; }
+
+        /// <summary>
         /// SupportsCity
         /// </summary>
         [DeserializeAs(Name = "supports_city")]

@@ -8,16 +8,16 @@
         /// <summary>
         /// RECENT
         /// </summary>
-        RECENT,
+        recent,
 
         /// <summary>
         /// HOME
         /// </summary>
-        HOME,
+        home,
 
         /// <summary>
         /// TRAVEL_IN
         /// </summary>
-        TRAVEL_IN
+        travel_in
     }
 }

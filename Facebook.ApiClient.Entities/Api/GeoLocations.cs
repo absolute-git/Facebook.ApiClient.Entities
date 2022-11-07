@@ -27,7 +27,7 @@ namespace Facebook.ApiClient.Entities.Api
         /// </summary>
         [DeserializeAs(Name = "regions")]
         [JsonProperty(PropertyName = "regions", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public Dictionary<string, string> Regions { get; set; }
+        public List<GeoLocation> Regions { get; set; }
 
         /// <summary>
         /// Specify key, radius & distance_unit. For key, see Targeting Search, Cities. radius is a distance around cities, from 10 to 50 miles or 17 to 80 kilometers. distance_unit is mile or kilometer. Limit: 250.
@@ -35,7 +35,7 @@ namespace Facebook.ApiClient.Entities.Api
         /// </summary>
         [DeserializeAs(Name = "cities")]
         [JsonProperty(PropertyName = "cities", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public List<City> Cities { get; set; }
+        public List<CityLocation> Cities { get; set; }
 
         /// <summary>
         /// Target Zip Code, See targeting search API. Limit: 50,000. Formerly 2,500. If you provide more than 2,500 we create an array known as location_cluster which represents a set of zip codes. 
@@ -45,7 +45,7 @@ namespace Facebook.ApiClient.Entities.Api
         /// </summary>
         [DeserializeAs(Name = "zips")]
         [JsonProperty(PropertyName = "zips", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public Dictionary<string, string> Zips { get; set; }
+        public List<ZipLocation> Zips { get; set; }
 
         /// <summary>
         /// Target Zip Code, See targeting search API. Limit: 50,000. Formerly 2,500. If you provide more than 2,500 we create an array known as location_cluster which represents a set of zip codes. 

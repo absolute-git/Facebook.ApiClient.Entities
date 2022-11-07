@@ -24,5 +24,19 @@ namespace Facebook.ApiClient.Entities.Api
         [DeserializeAs(Name = "region_id")]
         [JsonProperty(PropertyName = "region_id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public int RegionId { get; set; }
+
+        /// <summary>
+        /// Radius
+        /// </summary>
+        [DeserializeAs(Name = "radius")]
+        [JsonProperty(PropertyName = "radius", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public int Radius { get; set; }
+
+        /// <summary>
+        /// DistanceUnit
+        /// </summary>
+        [DeserializeAs(Name = "distance_unit")]
+        [JsonProperty(PropertyName = "distance_unit", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public DistanceUnit DistanceUnit { get; set; }
     }
 }
