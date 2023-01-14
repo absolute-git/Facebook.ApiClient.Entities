@@ -55,6 +55,16 @@
         /// </summary>
         ADSET_PAUSED,
 
+        /// <summary>
+        /// IN_PROCESS
+        /// </summary>
+        IN_PROCESS,
+
+        /// <summary>
+        /// WITH_ISSUES
+        /// </summary>
+        WITH_ISSUES
+
 
     }
 }
