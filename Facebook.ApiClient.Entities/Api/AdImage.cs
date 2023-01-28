@@ -141,6 +141,33 @@ namespace Facebook.ApiClient.Entities.Api
         public string Url128 { get; set; }
 
         /// <summary>
+        /// A temporary URL pointing to a version of the image resized to fit within a 256x256 pixel box
+        /// </summary>
+        [DeserializeAs(Name = "url_256")]
+        [JsonProperty(PropertyName = "url_128", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+            DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
+            ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public string Url256 { get; set; }
+
+        /// <summary>
+        /// The height of the 256 image.
+        /// </summary>
+        [DeserializeAs(Name = "url_256_height")]
+        [JsonProperty(PropertyName = "height", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+            DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
+            ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public int Url256Height { get; set; }
+
+        /// <summary>
+        /// The width of the 256 image.
+        /// </summary>
+        [DeserializeAs(Name = "url_256_width")]
+        [JsonProperty(PropertyName = "height", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+            DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
+            ObjectCreationHandling = ObjectCreationHandling.Auto)]
+        public int Url256Width { get; set; }
+
+        /// <summary>
         /// Time the image was updated.
         /// </summary>
         [DeserializeAs(Name = "updated_time")]
