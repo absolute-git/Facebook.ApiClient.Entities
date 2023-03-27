@@ -144,7 +144,7 @@ namespace Facebook.ApiClient.Entities.Api
         /// A temporary URL pointing to a version of the image resized to fit within a 256x256 pixel box
         /// </summary>
         [DeserializeAs(Name = "url_256")]
-        [JsonProperty(PropertyName = "url_128", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+        [JsonProperty(PropertyName = "url_256", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
             DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
             ObjectCreationHandling = ObjectCreationHandling.Auto)]
         public string Url256 { get; set; }
@@ -153,19 +153,19 @@ namespace Facebook.ApiClient.Entities.Api
         /// The height of the 256 image.
         /// </summary>
         [DeserializeAs(Name = "url_256_height")]
-        [JsonProperty(PropertyName = "height", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+        [JsonProperty(PropertyName = "url_256_height", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
             DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
             ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public int Url256Height { get; set; }
+        public int? Url256Height { get; set; }
 
         /// <summary>
         /// The width of the 256 image.
         /// </summary>
         [DeserializeAs(Name = "url_256_width")]
-        [JsonProperty(PropertyName = "height", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+        [JsonProperty(PropertyName = "url_256_width", ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
             DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore,
             ObjectCreationHandling = ObjectCreationHandling.Auto)]
-        public int Url256Width { get; set; }
+        public int? Url256Width { get; set; }
 
         /// <summary>
         /// Time the image was updated.
@@ -191,9 +191,10 @@ namespace Facebook.ApiClient.Entities.Api
         /// <returns>Comma seperated fields</returns>
         public static IList<string> GetApiSelectors()
         {
+            var ignoreProperties = new List<string>() { "url_256_width", "url_256_height", "url_256" };
             var apiFields = typeof(AdImage).GetProperties()
                 .Select(e => e.GetCustomAttributes(typeof(DeserializeAsAttribute), true)).Where(e => e.Length > 0)
-                .Select(e => e.First() as DeserializeAsAttribute).Where(e => e != null).Select(e => e.Name).ToList();
+                .Select(e => e.First() as DeserializeAsAttribute).Where(e => e != null && ignoreProperties.All(p => p != e.Name)).Select(e => e.Name).ToList();
 
             return apiFields;
         }

@@ -10,6 +10,7 @@ namespace Facebook.ApiClient.Entities.Api
     /// https://developers.facebook.com/docs/marketing-api/audiences/reference/targeting-search#geo
     /// </summary>
     public class CountryGroupLocation : GeoLocation
+
     {
         /// <summary>
         /// CountryCodes
