@@ -1,10 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Facebook.ApiClient.Entities.Api;
+using Newtonsoft.Json;
 using RestSharp.Deserializers;
 using System.Collections.Generic;
 
 namespace Facebook.ApiClient.Entities.Enumerations
 {
-    public class Interest
+    public class Interest : BaseEntity
     {
         [DeserializeAs(Name = "id")]
         [JsonProperty(PropertyName = "id", ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore, ObjectCreationHandling = ObjectCreationHandling.Auto)]
